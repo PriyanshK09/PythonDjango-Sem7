@@ -1,5 +1,5 @@
 """
-URL configuration for CalculatorApp project.
+URL configuration for templatedemo project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -16,11 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from myapp import views
+from core import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('calc/<str:operation>/<int:num1>/<int:num2>/', views.calculator, name='calculator'),
-    path('', views.calculator_form, name='calculator_form'),
-    path('', views.home, name='home')
+    path('', views.home, name='home'),
+    path('about/', views.about, name='about'),
+    path('contact/', views.contact, name='contact'),
 ]
